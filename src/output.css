@@ -7,6 +7,9 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-amber-300: oklch(87.9% 0.169 91.605);
+    --spacing: 0.25rem;
+    --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -163,11 +166,70 @@
   .static {
     position: static;
   }
+  .row-start-1 {
+    grid-row-start: 1;
+  }
+  .row-end-3 {
+    grid-row-end: 3;
+  }
   .contents {
     display: contents;
   }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
   .table {
     display: table;
+  }
+  .h-\[380px\] {
+    height: 380px;
+  }
+  .h-\[600px\] {
+    height: 600px;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .w-36 {
+    width: calc(var(--spacing) * 36);
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .border-1 {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .bg-amber-300 {
+    background-color: var(--color-amber-300);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+  .font-\[Bricolage_Grotesque\] {
+    font-family: Bricolage Grotesque;
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
   }
   .outline {
     outline-style: var(--tw-outline-style);
@@ -176,6 +238,129 @@
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
+  .mobile\:h-40 {
+    @media (width >= 375px) {
+      height: calc(var(--spacing) * 40);
+    }
+  }
+  .mobile\:h-64 {
+    @media (width >= 375px) {
+      height: calc(var(--spacing) * 64);
+    }
+  }
+  .mobile\:h-\[63px\] {
+    @media (width >= 375px) {
+      height: 63px;
+    }
+  }
+  .mobile\:h-\[588px\] {
+    @media (width >= 375px) {
+      height: 588px;
+    }
+  }
+  .mobile\:w-\[375px\] {
+    @media (width >= 375px) {
+      width: 375px;
+    }
+  }
+  .mobile\:grid-cols-2 {
+    @media (width >= 375px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .desktop\:col-start-2 {
+    @media (width >= 1440px) {
+      grid-column-start: 2;
+    }
+  }
+  .desktop\:grid {
+    @media (width >= 1440px) {
+      display: grid;
+    }
+  }
+  .desktop\:h-\[115px\] {
+    @media (width >= 1440px) {
+      height: 115px;
+    }
+  }
+  .desktop\:h-\[150px\] {
+    @media (width >= 1440px) {
+      height: 150px;
+    }
+  }
+  .desktop\:h-\[200px\] {
+    @media (width >= 1440px) {
+      height: 200px;
+    }
+  }
+  .desktop\:h-\[300px\] {
+    @media (width >= 1440px) {
+      height: 300px;
+    }
+  }
+  .desktop\:h-\[700px\] {
+    @media (width >= 1440px) {
+      height: 700px;
+    }
+  }
+  .desktop\:w-\[800px\] {
+    @media (width >= 1440px) {
+      width: 800px;
+    }
+  }
+  .desktop\:w-\[1200px\] {
+    @media (width >= 1440px) {
+      width: 1200px;
+    }
+  }
+  .desktop\:grid-cols-4 {
+    @media (width >= 1440px) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .desktop\:grid-cols-\[800px_400px\] {
+    @media (width >= 1440px) {
+      grid-template-columns: 800px 400px;
+    }
+  }
+  .desktop\:grid-rows-\[500px_500px\] {
+    @media (width >= 1440px) {
+      grid-template-rows: 500px 500px;
+    }
+  }
+}
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('../assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-weight: 300 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DM_Sans/DMSans-Italic-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-weight: 300 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf')format('truetype');
+  font-weight: 300, 500, 600, 600i, 700;
+  font-style: normal;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-outline-style {
   syntax: "*";
@@ -238,6 +423,8 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+      --tw-font-weight: initial;
       --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
