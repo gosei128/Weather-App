@@ -55,7 +55,7 @@
       </section>
     </div>
 
-   <div class="desktop:grid desktop:w-[1200px] desktop:grid-cols-[800px_400px] gap-2 desktop:grid-rows-[450px_500px]  ">
+   <div class="desktop:grid desktop:w-[1200px] desktop:grid-cols-[800px_400px] gap-2 desktop:grid-rows-[450px_250px]  ">
 
     <div class="desktop:grid h-[600px] desktop:h-[300px] gap-2 desktop:w-[800px] row-start-1 ">
       <div class=" mobile:h-[310px] flex justify-center">
@@ -96,7 +96,7 @@
       </div>
     </div>
   
-  <div class=" row-start-2 col-span-2 flex mobile:flex-col pl-5 desktop:mt-0 mobile:w-[375px]">
+  <div class=" row-start-2 col-span-2 flex mobile:flex-col mobile:pl-5 desktop:pl-1 desktop:mt-0 mobile:w-[375px]">
     <h1 class="font-[DM_Sans]">   Daily forecast</h1><br>
     <div class="mobile:h-[588px] desktop:w-[800px] desktop:h-[150px] ">
       <div id="container-dailyForecast" class=" flex flex-wrap gap-2  h-full">  
@@ -169,35 +169,82 @@
   </div>
 
   <div class="flex justify-center">
-    <div class=" desktop:col-start-2 desktop:h-[700px] rounded-[12px] w-[350px] bg-neutral-800 h-[700px] p-4">
-      <header class="flex justify-between ">
+    <div class=" desktop:col-start-2 overflow-y-auto desktop:h-[700px] relative rounded-[12px] w-[350px] bg-neutral-800 h-[700px] p-4">
+      <header class="flex justify-between sticky top-0 bg-neutral-800 p-3 rounded-2xl z-10  ">
         <H1>Hourly forecast</H1>
         
-        <button class="h-[33px] rounded-[12px] p-1 w-[95px] bg-neutral-400 group relative">
-          Tuesday v
-
+        <button class="h-[33px] rounded-[5px] p-2 gap-1 w-[95px] bg-neutral-500 group relative flex items-center "> 
+         
+          
           <div class="bg-neutral-400 absolute rounded-[12px] right-5 top-2 p-2 w-[100px] scale-y-0 group-focus:scale-y-100 origin-top duration-200">
-            <a href="">Monday</a>
-            <a href="">Tuesday</a>
-            <a href="">Wednesday</a>
-            <a href="">Thursday</a>
-            <a href="">Friday</a>
-            <a href="">Saturday</a>
-            <a href="">Sunday</a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
           </div>
-
         </button>
       </header>
 
-      <div class="flex  flex-col items-center p-2 gap-5">
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">3pm</div>
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">4pm</div>
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">5</div>
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">6</div>
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">7</div>
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">8</div>
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">9</div>
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">10</div>
+      <div id="hr-container" class="flex  flex-col items-center p-2 gap-5 ">
+        <div class="rounded-[11px] flex justify-between p-4 border-1 items-center border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">
+          <div class="flex items-center">
+          
+           <p></p>
+          </div>
+           <p></p>
+        </div>
+        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">
+          <div class="flex items-center">
+          
+           <p></p>
+          </div>
+           <p></p>
+        </div>
+        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">
+          <div class="flex items-center">
+          
+           <p></p>
+          </div>
+           <p></p>
+        </div>
+        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">
+          <div class="flex items-center">
+          
+           <p></p>
+          </div>
+           <p></p>
+          </div>
+        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">
+          <div class="flex items-center">
+          
+           <p></p>
+          </div>
+           <p></p>
+          </div>
+        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">
+          <div class="flex items-center">
+          
+           <p></p>
+          </div>
+           <p></p>
+          </div>
+        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">
+          <div class="flex items-center">
+          
+           <p></p>
+          </div>
+           <p></p>
+          </div>
+        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">
+          <div class="flex items-center">
+          
+           <p></p>
+          </div>
+           <p></p>
+          </div>
       </div>
 
     </div>
