@@ -37,62 +37,133 @@
   </div>
 <!-- SECTION 2-->
     <div class="mt-7 mobile:flex mobile:flex-col items-center justify-center gap-1">
-      <section class="mobile:h-60 mobile:w-[320px] desktop:w-[530px] desktop:h-[200px] text-center font-[Bricolage_Grotesque] text-6xl"> How's the sky looking today?</section>
+      <section class="mobile:h-60 mobile:w-[320px] desktop:w-[800px] desktop:h-[100px] text-center font-[Bricolage_Grotesque] text-6xl"> How's the sky looking today?</section>
       
 
 
-      <section class=" gap-2 flex justify-center mobile:flex-col desktop:flex-row mobile:h-40 mobile:w-[340px] desktop:w-full desktop:h-[200px]">
+      <section class=" gap-2 flex justify-center mobile:flex-col desktop:flex-row mobile:h-40 mobile:w-[340px] desktop:w-full desktop:h-[100px]">
         <label for="search" class="flex mobile:justify-center desktop:justify-start  bg-neutral-600 mobile:w-[342px] mobile:h-[55px] desktop:w-[530px] items-center rounded-[10px] gap-2 ">
           <img src="./assets/images/icon-search.svg" class="desktop:w-[63px] desktop:h-[30px]">
-          <input placeholder="Search for a place..."  class="placeholder-white desktop:h-[53px] focus:bg-neutral-600 bg-transparent" id="search" type="text">
+          <input  list="cities" placeholder="Search for a place..." autocomplete="off"  class="placeholder-white desktop:h-[53px] focus:outline-none focus:border-none bg-transparent" id="search" type="text">
+          <!-- <datalist id="cities">
+
+          </datalist> -->
         </label>
          
-         <button id="search-btn" type="submit" class=" bg-blue-500 desktop:w-24 rounded-[10px] desktop:h-[50px] p-2">Search</button>
-         <div class="desktop:w-[530px] bg-neutral-600" ></div>
-
-
+         <button id="search-btn" type="submit" class=" bg-blue-500 desktop:w-24 rounded-[10px] desktop:h-[50px] p-2 ">Search</button>
+         
       </section>
     </div>
 
-   <div class="desktop:grid desktop:w-[1200px] desktop:grid-cols-[800px_400px] desktop:grid-rows-[500px_500px] gap-1 ">
+   <div class="desktop:grid desktop:w-[1200px] desktop:grid-cols-[800px_400px] gap-2 desktop:grid-rows-[450px_500px]  ">
 
-    <div class="desktop:grid h-[600px] desktop:h-[300px] gap-2 desktop:w-[800px] row-start-1">
-      <div class=" mobile:h-[310px] justify-center p-4">
-        <div class="mobile:flex-col mobile:bg-[url(/assets/images/bg-today-small.svg)] ...  desktop:bg-[url(/assets/images/bg-today-large.svg)] desktop:w-[800px] mobile:w-[342px] mobile:h-[286px] desktop:flex-row desktop:justify-around desktop:items-center flex ">
+    <div class="desktop:grid h-[600px] desktop:h-[300px] gap-2 desktop:w-[800px] row-start-1 ">
+      <div class=" mobile:h-[310px] flex justify-center">
+        
+        <div id="cardWeather"  class="relative mobile:flex-col bg-neutral-800 rounded-2xl desktop:w-[800px] mobile:w-[342px] mobile:h-[286px] desktop:flex-row desktop:justify-around desktop:items-center flex ">
           
-          <div class="mobile:h-[120px]  flex flex-col justify-center items-center">
-            <h1 class="font-[DM_Sans] font-bold text-3xl">Berlin, Germany </h1>
-            <p class="font-[DM_Sans] text-blue-100">Tuesday, Aug 5, 2025 </p>
+          <div id="section-1" class="mobile:h-[120px] flex flex-col justify-center transition duration-1000 items-center">
+            <h1 id="h1" class="font-[DM_Sans] font-bold text-3xl"></h1>
+            <p id="current-date" class="font-[DM_Sans] text-blue-100"></p>
           </div>
 
-          <div class="mobile:h-[155px] flex justify-center items-center">
-            <img src="./assets/images/icon-sunny.webp" class="w-[8rem] h-[8rem] " alt="">
-             <p class="font-bold font-[DM_Sans] italic text-shadow-black text-8xl">68°</p>
+          <div id="weatherIcon" class="mobile:h-[155px] flex justify-center items-center"> 
+            <img id="sun-icon" src="./assets/images/icon-sunny.webp" class="w-[8rem] h-[8rem] sr-only " alt="">
+             <p id="temp" class="font-bold font-[DM_Sans] italic text-shadow-black text-8xl"></p>
           </div>
         </div>
       
       </div>
       
 
-      <div class=" desktop:h-[115px] desktop:w-[800px] mt-5 gap-4 flex flex-wrap justify-center ">
-        <div class=" mobile:w-[164px] mobile:h-[120px] desktop:w-[180px] desktop:h-[130px] rounded-[11px] border-1 border-neutral-500 bg-neutral-600" >1</div>
-        <div class=" mobile:w-[164px] mobile:h-[120px] desktop:w-[180px] desktop:h-[130px] rounded-[11px] border-1 border-neutral-500 bg-neutral-600" >2</div>
-        <div class=" mobile:w-[164px] mobile:h-[120px] desktop:w-[180px] desktop:h-[130px] rounded-[11px] border-1 border-neutral-500 bg-neutral-600" >3</div>
-        <div class=" mobile:w-[164px] mobile:h-[120px] desktop:w-[180px] desktop:h-[130px] rounded-[11px] border-1 border-neutral-500 bg-neutral-600" >4</div>
+      <div class=" desktop:h-[115px] desktop:w-[800px] mobile:flex-wrap  gap-6 flex justify-center ">
+        <div class=" mobile:w-[164px] mobile:h-[120px] desktop:w-[180px] desktop:h-[130px] rounded-[11px] border-1 flex flex-col p-3 justify-evenly border-neutral-600 bg-neutral-800" >
+          <p class="font-[DM_Sans] text-neutral-200">Feels Like</p>
+          <h3 id="apparentTemp" class="font-[DM_Sans] text-3xl font-light">_</h3>
+        </div class="font-[DM_Sans] text-4xl">
+        <div class=" mobile:w-[164px] mobile:h-[120px] desktop:w-[180px] desktop:h-[130px] rounded-[11px] border-1 flex flex-col p-3 justify-evenly border-neutral-600 bg-neutral-800" >
+          <p class="font-[DM_Sans] text-neutral-200">Humidity</p>
+          <h3 id="humidity" class="font-[DM_Sans] text-3xl font-light">_</h3>
+        </div>
+        <div class=" mobile:w-[164px] mobile:h-[120px] desktop:w-[180px] desktop:h-[130px] rounded-[11px] border-1 flex flex-col p-3 justify-evenly border-neutral-600 bg-neutral-800" >
+          <p class="font-[DM_Sans] text-neutral-200">Wind</p>
+          <h3 id="windSpeed" class="font-[DM_Sans] text-3xl font-light">_</h3>
+        </div>
+        <div class=" mobile:w-[164px] mobile:h-[120px] desktop:w-[180px] desktop:h-[130px] rounded-[11px] border-1 flex flex-col p-3 justify-evenly border-neutral-600 bg-neutral-800" >
+          <p class="font-[DM_Sans] text-neutral-200">Precipitation</p>
+          <h3 id="precipitation" class="font-[DM_Sans] font-light text-3xl">_</h3>
+        </div>
       </div>
     </div>
   
-  <div class="p-4 row-start-2 col-span-2 ">
-    <h1 class="font-[DM_Sans]">Daily forecast</h1>
+  <div class=" row-start-2 col-span-2 flex mobile:flex-col pl-5 desktop:mt-0 mobile:w-[375px]">
+    <h1 class="font-[DM_Sans]">   Daily forecast</h1><br>
     <div class="mobile:h-[588px] desktop:w-[800px] desktop:h-[150px] ">
-      <div class=" flex flex-wrap gap-2  h-full">  
-        <div class=" mobile:w-[105px] mobile:h-[155px] rounded-[11px] border-1  border-neutral-500 bg-neutral-600" >1</div>
-        <div class=" mobile:w-[105px] mobile:h-[155px] rounded-[11px] border-1  border-neutral-500 bg-neutral-600" >2</div>
-        <div class=" mobile:w-[105px] mobile:h-[155px] rounded-[11px] border-1  border-neutral-500 bg-neutral-600" >3</div>
-        <div class=" mobile:w-[105px] mobile:h-[155px] rounded-[11px] border-1  border-neutral-500 bg-neutral-600" >4</div>
-        <div class=" mobile:w-[105px] mobile:h-[155px] rounded-[11px] border-1  border-neutral-500 bg-neutral-600" >5</div>
-        <div class=" mobile:w-[105px] mobile:h-[155px] rounded-[11px] border-1  border-neutral-500 bg-neutral-600" >6</div>
-        <div class=" mobile:w-[105px] mobile:h-[155px] rounded-[11px] border-1  border-neutral-500 bg-neutral-600" >7</div>
+      <div id="container-dailyForecast" class=" flex flex-wrap gap-2  h-full">  
+         <div class=" mobile:w-[105px] mobile:h-[155px] rounded-[11px] border-1  border-neutral-600 bg-neutral-800" >
+          <div class="flex flex-col h-[150px] justify-center items-center p-4 ">
+            <h4></h4>
+            <div class="flex justify-between w-[80px]">
+            <p></p>
+            <p></p>
+            </div>
+          </div>
+        </div>
+        <div class=" mobile:w-[105px] mobile:h-[155px] rounded-[11px] border-1  border-neutral-600 bg-neutral-800" >
+          <div class="flex flex-col h-[150px] justify-center items-center p-4 ">
+            <h4></h4>
+            <div class="flex justify-between w-[80px]">
+            <p></p>
+            <p></p>
+            </div>
+          </div>
+        </div>
+        <div class=" mobile:w-[105px] mobile:h-[155px] rounded-[11px] border-1  border-neutral-600 bg-neutral-800" >
+          <div class="flex flex-col h-[150px] justify-center items-center p-4 ">
+            <h4></h4>
+            <div class="flex justify-between w-[80px]">
+            <p></p>
+            <p></p>
+            </div>
+          </div>
+        </div>
+        <div class=" mobile:w-[105px] mobile:h-[155px] rounded-[11px] border-1  border-neutral-600 bg-neutral-800" >
+          <div class="flex flex-col h-[150px] justify-center items-center p-4 ">
+            <h4></h4>
+            <div class="flex justify-between w-[80px]">
+            <p></p>
+            <p></p>
+            </div>
+          </div>
+        </div>
+        <div class=" mobile:w-[105px] mobile:h-[155px] rounded-[11px] border-1  border-neutral-600 bg-neutral-800" >
+          <div class="flex flex-col h-[150px] justify-center items-center p-4 ">
+            <h4></h4>
+            <div class="flex justify-between w-[80px]">
+            <p></p>
+            <p></p>
+            </div>
+          </div>
+        </div>
+        <div class=" mobile:w-[105px] mobile:h-[155px] rounded-[11px] border-1  border-neutral-600 bg-neutral-800" >
+          <div class="flex flex-col h-[150px] justify-center items-center p-4 ">
+            <h4></h4>
+            <div class="flex justify-between w-[80px]">
+            <p></p>
+            <p></p>
+            </div>
+          </div>
+        </div>
+        <div class=" mobile:w-[105px] mobile:h-[155px] rounded-[11px] border-1  border-neutral-600 bg-neutral-800" >
+          <div class="flex flex-col h-[150px] justify-center items-center p-4 ">
+            <h4></h4>
+            
+            <div class="flex justify-between w-[80px]">
+            <p></p>
+            <p></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -119,14 +190,14 @@
       </header>
 
       <div class="flex  flex-col items-center p-2 gap-5">
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-500 bg-neutral-600 h-[61px] w-[315px]">3pm</div>
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-500 bg-neutral-600 h-[61px] w-[315px]">4pm</div>
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-500 bg-neutral-600 h-[61px] w-[315px]">5</div>
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-500 bg-neutral-600 h-[61px] w-[315px]">6</div>
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-500 bg-neutral-600 h-[61px] w-[315px]">7</div>
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-500 bg-neutral-600 h-[61px] w-[315px]">8</div>
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-500 bg-neutral-600 h-[61px] w-[315px]">9</div>
-        <div class="rounded-[11px] flex justify-between border-1 border-neutral-500 bg-neutral-600 h-[61px] w-[315px]">10</div>
+        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">3pm</div>
+        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">4pm</div>
+        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">5</div>
+        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">6</div>
+        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">7</div>
+        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">8</div>
+        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">9</div>
+        <div class="rounded-[11px] flex justify-between border-1 border-neutral-600 bg-neutral-700 h-[61px] w-[315px]">10</div>
       </div>
 
     </div>
