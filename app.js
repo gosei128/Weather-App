@@ -2,15 +2,27 @@ const searchCity = document.getElementById('search')
 const searchBtn = document.getElementById('search-btn')
 const currentDateEl = document.getElementById('current-date')
 const weatherIcon = document.getElementById('sun-moon-icon')
+const main = document.getElementById('main-section');
 // Keep last searched coordinates and selected date for hourly filtering
 let lastLatitude = null
 let lastLongitude = null
 let selectedHourlyDate = null // format: YYYY-MM-DD
 
 searchBtn.addEventListener('click', ()=>{
+    try{
     const name = searchCity.value;
-    getWeather(name);
-   
+
+    if(!name.length < 1 || !name.length == 0){
+        getWeather(name);
+        main.classList.remove('sr-only')
+    }else{
+        main.classList.add('sr-only')
+    }
+
+}catch(err){
+    console.error(err)
+}
+    
     searchCity.value = ""
 })
 async function getWeather(cityName){
