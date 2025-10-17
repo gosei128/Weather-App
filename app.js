@@ -2,26 +2,16 @@ const searchCity = document.getElementById('search')
 const searchBtn = document.getElementById('search-btn')
 const currentDateEl = document.getElementById('current-date')
 const weatherIcon = document.getElementById('sun-moon-icon')
-const main = document.getElementById('main-section');
+const main = document.getElementById('main-section')
 // Keep last searched coordinates and selected date for hourly filtering
 let lastLatitude = null
 let lastLongitude = null
 let selectedHourlyDate = null // format: YYYY-MM-DD
 
 searchBtn.addEventListener('click', ()=>{
-    try{
+    
     const name = searchCity.value;
-
-    if(!name.length < 1 || !name.length == 0){
-        getWeather(name);
-        main.classList.remove('sr-only')
-    }else{
-        main.classList.add('sr-only')
-    }
-
-}catch(err){
-    console.error(err)
-}
+   getWeather(name)
     
     searchCity.value = ""
 })
@@ -79,7 +69,7 @@ async function getWeather(cityName){
     }
 }
 
-
+getWeather('manila')
 
 function currentWeather(city, country, temperature, time){
     document.getElementById('h1').innerText = `${city}, ${country}`
@@ -275,7 +265,7 @@ function buildDayDropdown(weatherData){
     let labelEl = button.querySelector('#day-select-label')
     if(!labelEl){
         // Overwrite minimal inner to add a label span while keeping classes
-        button.innerHTML = '<span id="day-select-label">Today</span><img src="./assets/images/icon-dropdown.svg" class="w-[12px] h-[12px] group-focus:scale-y-0"> \n          <div id="day-options" class="bg-neutral-700 border-1 border-neutral-600 absolute rounded-[8px] right-0 top-full mt-1 p-2 w-[300px] max-h-64 overflow-y-auto scale-y-0 group-focus:scale-y-100 origin-top duration-200"></div>'
+        button.innerHTML = '<span id="day-select-label">Today</span><img src="./assets/images/icon-dropdown.svg" class="w-[12px] h-[12px] group-focus:scale-y-0"> \n          <div id="day-options" class="bg-neutral-700 border-1 border-neutral-600 absolute rounded-[8px] right-0 top-full mt-1 p-2 w-[100px] max-h-64 overflow-y-hiddens scale-y-0 group-focus:scale-y-100 origin-top duration-200"></div>'
         labelEl = button.querySelector('#day-select-label')
     }
     const optionsEl = button.querySelector('#day-options') || button.querySelector('div')
